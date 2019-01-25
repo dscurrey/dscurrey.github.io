@@ -11,6 +11,8 @@ baseurl:
 social:
   - title: linkedin
     url: https://www.linkedin.com/in/dscurrey/
+  - title: github
+    url: https://github.com/dscurrey
     
 # Google webmaster tools
 google_verify:
