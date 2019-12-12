@@ -1,7 +1,7 @@
 # Site settings
 name: Dylan Currey
-email: dscurrey@protonmail.com
-#canonical_url: https://dscurrey.co.uk
+email: dsc1998@protonmail.com
+canonical_url: https://dscurrey.co.uk
 keywords: "Java, C#, NetBeans, Visual Studio, Agile, Student, Computer Science, developer, programmer"
 skills: "BSc Computer Science Student at Teesside University"
 baseurl:
@@ -13,8 +13,8 @@ social:
     url: https://www.linkedin.com/in/dscurrey/
   - title: github
     url: https://github.com/dscurrey
-  - title: gitea
-    url: http://gitea.dcurrey.co.uk/
+  #- title: gitea
+    #url: http://gitea.dcurrey.co.uk/
     
 # Google webmaster tools
 google_verify:
