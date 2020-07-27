@@ -3,8 +3,8 @@ name: Dylan Currey
 email: dsc1998@protonmail.com
 canonical_url: https://dscurrey.co.uk
 keywords: "Java, C#, NetBeans, Visual Studio, Agile, Student, Computer Science, developer, programmer"
-skills: "BSc Computer Science Student at Teesside University"
-baseurl:
+skills: "BSc Computer Science Student (Hons) (First Class) Graduate"
+baseurl: "dcurrey.co.uk"
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 # You should replace these with your social networks, of course. :)
@@ -15,9 +15,11 @@ social:
     url: https://github.com/dscurrey
   - title: github
     url: https://gitea.dcurrey.co.uk/
+  - title: self-hosting-dash
+    url: https://dash.dcurrey.co.uk/
   - title: wordpress
     url: https://wp.dcurrey.co.uk/
-    
+
 # Google webmaster tools
 google_verify:
 
