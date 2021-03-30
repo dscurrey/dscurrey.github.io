@@ -15,8 +15,8 @@ social:
     url: https://github.com/dscurrey
   - title: github
     url: https://gitea.dcurrey.co.uk/
-  - title: self-hosting-dash
-    url: https://dash.dcurrey.co.uk/
+  # - title: self-hosting-dash
+  #   url: https://dash.dcurrey.co.uk/
   - title: wordpress
     url: https://wp.dcurrey.co.uk/
 
