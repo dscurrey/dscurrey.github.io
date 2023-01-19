@@ -1,41 +1,52 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
 # Site settings
-name: Dylan Currey
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: DCURREY
 email: dscurrey@outlook.com
-canonical_url: https://dscurrey.co.uk
-keywords: "Java, C#, NetBeans, Visual Studio, Agile, Student, Computer Science, developer, programmer"
-skills: ".NET Developer at razorblue" #"BSc Computer Science Student (Hons) (First Class) Graduate"
-baseurl:
-
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-# You should replace these with your social networks, of course. :)
-social:
-  - title: linkedin
-    url: https://www.linkedin.com/in/dscurrey/
-  - title: github
-    url: https://github.com/dscurrey
-  - title: github
-    url: https://gitea.dcurrey.co.uk/
-  # - title: self-hosting-dash
-  #   url: https://dash.dcurrey.co.uk/
-  # - title: wordpress
-  #   url: https://wp.dcurrey.co.uk/
-
-# Google webmaster tools
-google_verify:
-
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
-
-# Color settings (hex-codes without the leading hash-tag)
-color:
-  primary: 2196F3
-  primary-rgb: "33, 150, 243"
-  secondary: 285172
-  secondary-dark: 29455b
-  section-tout: eaf1f1
-
-
+description: >- # this means to ignore newlines until "baseurl:"
+  Some kind of website.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://dcurrey.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  dscurrey
 
 # Build settings
-markdown: kramdown
-permalink: pretty
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
