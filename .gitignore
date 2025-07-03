@@ -153,3 +153,4 @@ fabric.properties
 !.idea/runConfigurations
 
 # End of https://www.toptal.com/developers/gitignore/api/rubymine+all,ruby
+.gem_rbs_collection
