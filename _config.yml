@@ -28,10 +28,10 @@ bing_verify:
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: 2196F3
-  primary-rgb: "33, 150, 243"
-  secondary: 285172
-  secondary-dark: 29455b
+  primary: 208c71
+  primary-rgb: "32, 140, 113"
+  secondary: 005941
+  secondary-dark: 8C203B
   section-tout: eaf1f1
 
 
