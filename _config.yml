@@ -39,7 +39,8 @@ hero_style: compact
 # One-line summary shown under the name (leave empty to hide)
 summary: "Software developer. C# / .NET / T-SQL. Legacy modernisation, self-hosting."
 
-# Short status line with an accent dot (leave empty to hide)
+# Short status line with an accent dot (leave empty to hide).
+# Placeholder: planned final wording is "Experimenting with AI" (apply at the end of the redesign).
 status: "Rebuilding this site"
 
 # Show the email address in the hero (uses `email` above). Hidden by default.
@@ -54,6 +55,7 @@ hero_details:
     value: razorblue
   - label: Location
     value: Middlesbrough, GB
+    flag: gb   # optional: shows a flag before the value (supported: gb)
 
 # Page content lives in _data/:
 #   _data/about.yml       About paragraphs

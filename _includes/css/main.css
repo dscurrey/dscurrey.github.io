@@ -141,6 +141,7 @@ button.theme:hover, button.theme:focus-visible { background: var(--accent); bord
 .details dd { margin: 0; padding: 2px 0; border-top: 1px solid var(--rule-soft); }
 
 .hero .summary { margin-top: 8px; max-width: 60ch; }
+.flag { display: inline-block; vertical-align: -1px; margin-right: 0; border: 1px solid var(--rule-soft); }
 .links a { margin-right: 16px; }
 .status::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: 1px; }
 p.status, p.links { margin-top: 8px; }

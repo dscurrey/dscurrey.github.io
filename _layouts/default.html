@@ -54,7 +54,7 @@
                 {% if site.summary %}<p class="summary">{{ site.summary }}</p>{% endif %}
                 {% if site.hero_style == 'compact' %}
                 <dl class="details">
-                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{{ d.value }}</dd>
+                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{% if d.flag == "gb" %}{% include flag_gb.html %}{% endif %}{{ d.value }}</dd>
                     {% endfor %}
                     {% if site.show_email and site.email %}<dt>Contact</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>{% endif %}
                     {% if site.social.size > 0 %}<dt>Links</dt><dd class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</dd>{% endif %}
