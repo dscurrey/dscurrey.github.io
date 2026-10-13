@@ -32,6 +32,7 @@ bing_verify:
 color:
   accent: "#c8381a"
   accent_dark: "#ff7a50"
+  # Future option: original green. Light #208c71 (darken if contrast is low), dark needs a lighter equivalent, e.g. #4cc9a6.
 
 # Hero layout: "compact" (small name + key/value details) or "large" (big name)
 hero_style: compact
@@ -51,8 +52,6 @@ show_email: false
 hero_details:
   - label: Role
     value: Developer
-  - label: Discipline
-    value: Software developer
   - label: Employer
     value: razorblue
   - label: Experience
