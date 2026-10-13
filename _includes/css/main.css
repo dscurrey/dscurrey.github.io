@@ -48,10 +48,11 @@ body {
     line-height: 1.6;
 }
 
-::selection { background: var(--sel-bg); color: var(--sel-fg); }
+::selection { background: var(--accent); color: var(--bg); }
 
-a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover, a:focus-visible { background: var(--sel-bg); color: var(--sel-fg); text-decoration: none; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover, a:focus-visible { background: var(--accent); color: var(--bg); text-decoration: none; }
+.label .num, .entry .when { color: var(--accent); }
 
 h1, h2, h3, h4, p, ul { margin: 0; padding: 0; font-weight: 400; font-size: inherit; }
 ul { list-style: none; }
@@ -89,7 +90,7 @@ p + p { margin-top: 1em; }
     padding: 10px 24px;
 }
 .bar nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
-.bar a { text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; }
+.bar a { color: inherit; text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; }
 
 button.theme {
     font: inherit;
@@ -102,7 +103,7 @@ button.theme {
     padding: 2px 8px;
     cursor: pointer;
 }
-button.theme:hover, button.theme:focus-visible { background: var(--sel-bg); color: var(--sel-fg); }
+button.theme:hover, button.theme:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 
 /* ---- hero ---- */
 .hero-main { display: grid; grid-template-columns: 1fr 160px; gap: 24px; align-items: end; }
@@ -118,6 +119,14 @@ button.theme:hover, button.theme:focus-visible { background: var(--sel-bg); colo
     filter: grayscale(1) contrast(1.05);
 }
 
+/* compact hero: small name + key/value table */
+.hero-compact h1 { font-size: 20px; letter-spacing: 0; }
+.hero-compact .hero-main { grid-template-columns: 1fr 96px; align-items: start; }
+.hero-compact .portrait { width: 96px; height: 96px; }
+.details { margin: 12px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 0 24px; max-width: 420px; }
+.details dt { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; padding: 2px 0; border-top: 1px solid var(--rule-soft); }
+.details dd { margin: 0; padding: 2px 0; border-top: 1px solid var(--rule-soft); }
+
 /* ---- entries ---- */
 .entry {
     display: grid;
@@ -129,7 +138,6 @@ button.theme:hover, button.theme:focus-visible { background: var(--sel-bg); colo
 .entry:first-child { border-top: 0; padding-top: 0; }
 .entry:last-child { padding-bottom: 0; }
 .entry h3 { font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 8px; }
-.entry .when { color: var(--muted); }
 
 .entry p, .content p { max-width: 70ch; }
 
@@ -137,6 +145,7 @@ button.theme:hover, button.theme:focus-visible { background: var(--sel-bg); colo
 .specs li { break-inside: avoid; padding: 2px 0; border-bottom: 1px solid var(--rule-soft); }
 
 /* ---- footer ---- */
+.foot a { color: inherit; }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 10px 24px; border-top: 1px solid var(--rule); }
 
 /* ---- small screens ---- */
@@ -146,8 +155,8 @@ button.theme:hover, button.theme:focus-visible { background: var(--sel-bg); colo
     .row > * { padding: 16px; }
     .row > .label-col { border-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
     .bar, .foot { padding-left: 16px; padding-right: 16px; }
-    .hero-main { grid-template-columns: 1fr; }
-    .portrait { width: 96px; height: 96px; order: -1; }
+    .hero-main, .hero-compact .hero-main { grid-template-columns: 1fr; }
+    .portrait, .hero-compact .portrait { width: 96px; height: 96px; order: -1; }
     .entry { grid-template-columns: 1fr; }
     .entry .when { margin-bottom: 4px; }
     .specs { columns: 1; }

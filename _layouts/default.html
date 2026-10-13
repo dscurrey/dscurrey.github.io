@@ -39,12 +39,19 @@
         <button type="button" class="theme" id="theme-toggle" aria-label="Toggle colour theme">Theme</button>
     </div>
 
-    <header class="row hero">
+    <header class="row hero hero-{{ site.hero_style | default: 'large' }}">
         <div class="label-col label">Index</div>
         <div class="hero-main">
             <div>
                 <h1>{{ site.name }}</h1>
+                {% if site.hero_style == 'compact' and site.hero_details %}
+                <dl class="details">
+                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{{ d.value }}</dd>
+                    {% endfor %}
+                </dl>
+                {% else %}
                 <p class="tagline">{{ site.skills }}</p>
+                {% endif %}
             </div>
             <img class="portrait" src="{{ site.baseurl }}/img/profile.png" alt="{{ site.name }}" width="160" height="160">
         </div>

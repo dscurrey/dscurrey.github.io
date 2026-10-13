@@ -1,3 +1,11 @@
 ---
 ---
+:root {
+    --accent: {{ site.color.accent | default: "#c8381a" }};
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --accent: {{ site.color.accent_dark | default: "#ff7a50" }}; }
+}
+:root[data-theme="dark"] { --accent: {{ site.color.accent_dark | default: "#ff7a50" }}; }
+
 {% include css/main.css %}

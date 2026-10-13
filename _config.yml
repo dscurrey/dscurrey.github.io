@@ -26,15 +26,27 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
-# Color settings (hex-codes without the leading hash-tag)
+# Theme settings (hex-codes WITH the leading hash-tag)
+# accent: used for links, hover states and section numbers.
+# Light/dark values are separate so contrast stays readable in both themes.
 color:
-  primary: 208c71
-  primary-rgb: "32, 140, 113"
-  secondary: 005941
-  secondary-dark: 8C203B
-  section-tout: eaf1f1
+  accent: "#c8381a"
+  accent_dark: "#ff7a50"
 
+# Hero layout: "compact" (small name + key/value details) or "large" (big name)
+hero_style: compact
 
+# Key/value rows shown in the compact hero. Add, remove or edit freely.
+hero_details:
+  - label: Role
+    value: Developer
+  - label: Employer
+    value: razorblue
+
+# Page content lives in _data/:
+#   _data/about.yml       About paragraphs
+#   _data/experience.yml  Experience entries
+#   _data/skills.yml      Skills list
 
 # Build settings
 markdown: kramdown
