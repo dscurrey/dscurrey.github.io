@@ -51,11 +51,17 @@ show_email: false
 hero_details:
   - label: Role
     value: Developer
+  - label: Discipline
+    value: Software developer
   - label: Employer
     value: razorblue
+  - label: Experience
+    since: 2020      # calculated at build time: "N years (since 2020)"; no `value` needed
   - label: Location
     value: Middlesbrough, GB
-    flag: gb   # optional: shows a flag before the value (supported: gb)
+    flag: gb         # optional: shows a flag before the value (supported: gb)
+  - label: Interests
+    value: LARP, blacksmithing, 3D printing, vintage audio formats
 
 # Page content lives in _data/:
 #   _data/about.yml       About paragraphs

@@ -54,7 +54,7 @@
                 {% if site.summary %}<p class="summary">{{ site.summary }}</p>{% endif %}
                 {% if site.hero_style == 'compact' %}
                 <dl class="details">
-                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{% if d.flag == "gb" %}{% include flag_gb.html %}{% endif %}{{ d.value }}</dd>
+                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{% if d.flag == "gb" %}{% include flag_gb.html %}{% endif %}{% if d.since %}{% assign yrs = site.time | date: "%Y" | minus: d.since %}{{ yrs }} year{% if yrs != 1 %}s{% endif %} (since {{ d.since }}){% else %}{{ d.value }}{% endif %}</dd>
                     {% endfor %}
                     {% if site.show_email and site.email %}<dt>Contact</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>{% endif %}
                     {% if site.social.size > 0 %}<dt>Links</dt><dd class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</dd>{% endif %}
