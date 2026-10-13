@@ -2,7 +2,7 @@
 name: Dylan Currey
 email: dscurrey@outlook.com
 canonical_url: https://dscurrey.co.uk
-keywords: "Java, C#, NetBeans, Visual Studio, Agile, Student, Computer Science, developer, programmer"
+keywords: "developer, software developer, C#, .NET, T-SQL, Docker, Linux, self-hosting, Middlesbrough"
 skills: "Developer" #"BSc Computer Science Student (Hons) (First Class) Graduate"
 baseurl:
 
@@ -36,12 +36,24 @@ color:
 # Hero layout: "compact" (small name + key/value details) or "large" (big name)
 hero_style: compact
 
-# Key/value rows shown in the compact hero. Add, remove or edit freely.
+# One-line summary shown under the name (leave empty to hide)
+summary: "Software developer. C# / .NET / T-SQL. Legacy modernisation, self-hosting."
+
+# Short status line with an accent dot (leave empty to hide)
+status: "Rebuilding this site"
+
+# Show the email address in the hero (uses `email` above). Hidden by default.
+show_email: false
+
+# Key/value rows shown in the compact hero, in order. Contact, Links and Status
+# rows are added automatically after these when enabled/set.
 hero_details:
   - label: Role
     value: Developer
   - label: Employer
     value: razorblue
+  - label: Location
+    value: Middlesbrough, GB
 
 # Page content lives in _data/:
 #   _data/about.yml       About paragraphs

@@ -7,7 +7,8 @@ Working notes for the site overhaul (not published; excluded in `_config.yml`).
 - **Accent colour**: `#c8381a` (light) / `#ff7a50` (dark) kept for now; needs real-world testing. Alternatives: original green `#208c71`, deep blue.
 - **Hero**: compact is the default; large is available via `hero_style: large` in `_config.yml`.
 - **Portrait**: `img/profile.png` is a placeholder logo; replace with a real photo.
-- **Experience wording**: corrections proposed and awaiting approval; shorter bullets after that.
+- **Experience wording**: corrections applied. Shorter bullets still to review.
+- **Hero**: decide `summary` text, `status` text (both placeholders), and whether to rename Role; `show_email` is off by default.
 
 ## Where things live
 - Content: `_data/experience.yml`, `_data/about.yml`, `_data/skills.yml`

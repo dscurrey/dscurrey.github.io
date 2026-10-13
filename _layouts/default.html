@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }} &mdash; {{ site.skills }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.name }} {{ site.skills }}">
+    <meta name="description" content="{{ site.name }}, {{ site.skills }}">
     <meta name="keywords" content="{{ site.keywords }}"/>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.canonical_url }}">
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/icon.png" sizes="16x16"/>
@@ -34,7 +34,6 @@
             <a href="#experience" data-section="experience"><span class="num">00</span> Experience</a>
             <a href="#about" data-section="about"><span class="num">01</span> About</a>
             <a href="#skills" data-section="skills"><span class="num">02</span> Skills</a>
-            {% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}
         </nav>
         <button type="button" class="theme" id="theme-toggle" aria-label="Toggle colour theme">Theme</button>
     </div>
@@ -52,13 +51,19 @@
         <div class="hero-main">
             <div>
                 <h1>{{ site.name }}</h1>
-                {% if site.hero_style == 'compact' and site.hero_details %}
+                {% if site.summary %}<p class="summary">{{ site.summary }}</p>{% endif %}
+                {% if site.hero_style == 'compact' %}
                 <dl class="details">
                     {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{{ d.value }}</dd>
                     {% endfor %}
+                    {% if site.show_email and site.email %}<dt>Contact</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>{% endif %}
+                    {% if site.social.size > 0 %}<dt>Links</dt><dd class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</dd>{% endif %}
+                    {% if site.status %}<dt>Status</dt><dd class="status">{{ site.status }}</dd>{% endif %}
                 </dl>
                 {% else %}
                 <p class="tagline">{{ site.skills }}</p>
+                {% if site.status %}<p class="status">{{ site.status }}</p>{% endif %}
+                {% if site.social.size > 0 %}<p class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</p>{% endif %}
                 {% endif %}
             </div>
             <img class="portrait" src="{{ site.baseurl }}/img/profile.png" alt="{{ site.name }}" width="160" height="160">

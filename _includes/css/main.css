@@ -140,6 +140,11 @@ button.theme:hover, button.theme:focus-visible { background: var(--accent); bord
 .details dt { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; padding: 2px 0; border-top: 1px solid var(--rule-soft); }
 .details dd { margin: 0; padding: 2px 0; border-top: 1px solid var(--rule-soft); }
 
+.hero .summary { margin-top: 8px; max-width: 60ch; }
+.links a { margin-right: 16px; }
+.status::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: 1px; }
+p.status, p.links { margin-top: 8px; }
+
 /* ---- entries ---- */
 .entry {
     display: grid;

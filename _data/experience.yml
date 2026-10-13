@@ -3,23 +3,23 @@
   title: razorblue
   details:
     - Working on supporting, maintaining, and developing a large legacy C++ ERP system since 2020 as part of a small agile team.
-    - Redevelopment of legacy project using modern architecture, C#, .NET, to make it easier to integrate into other services.
-    - Focus on code maintainability, behaviour driven and unit testing.
-    - Regular team standups, reporting to project manager, task estimation.
+    - Redevelopment of a legacy project using modern architecture (C#, .NET) to make it easier to integrate with other services.
+    - Focus on code maintainability, behaviour-driven and unit testing.
+    - Regular team standups, reporting to the project manager, task estimation.
     - This role involves heavy use of C#, .NET, and T-SQL, along with some Blazor development and the use of Docker.
 
 - when: Ongoing
   title: Self-Hosting
   details:
-    - Host my own services for a variety of applications (ironically, not this site though, this is done through GitHub pages)
-    - Automated deployment using GitOps and docker compose, carried out by portainer.
-    - Services include Git Repositories ([Gitea](https://gitea.dcurrey.co.uk/)), audiobook storage and access (using [Audiobookshelf](https://github.com/advplyr/audiobookshelf)), and Image storage ([Immich](https://github.com/immich-app/immich)).
-    - Includes a DevOps environment which including Jenkins and Sonarqube for code quality, which were configured against repositories. This approached helped identify changes with the CI/CD in the workplace which could boost efficiency.
-    - Log aggregation (comparing Seq, Grafana/Loki) with prototype software, to apply to professional work in due course.
-    - Access of public services is configured with cloudflare and reverse proxy, which automatically manage SSL.
-    - Private services are accessed using headscale, similar to Tailscale (P2P VPN tunneling).
+    - Host my own services for a variety of applications (ironically, not this site, which is hosted on GitHub Pages).
+    - Automated deployment using GitOps and Docker Compose, carried out by Portainer.
+    - Services include Git repositories ([Gitea](https://gitea.dcurrey.co.uk/)), audiobook storage and access (using [Audiobookshelf](https://github.com/advplyr/audiobookshelf)), and image storage ([Immich](https://github.com/immich-app/immich)).
+    - Includes a DevOps environment including Jenkins and SonarQube for code quality, configured against my repositories. This approach helped identify changes to the CI/CD process in the workplace that could boost efficiency.
+    - Log aggregation (comparing Seq and Grafana/Loki) using prototype software, to apply to professional work in due course.
+    - Access to public services is configured with Cloudflare and a reverse proxy, which automatically manage SSL.
+    - Private services are accessed using Headscale, similar to Tailscale (peer-to-peer VPN tunnelling).
 
 - when: "2019"
   title: Syski (Project)
   details:
-    - "*Winner of ExpoTalent TechART (Technical Artifact) Award (2019)*. A system management & monitoring application created in an agile development group as a part of my University Course. Making use of an API (Written in C#), Windows/Linux monitor application and an Android application, written in Java."
+    - "*Winner of ExpoTalent TechART (Technical Artefact) Award (2019).* A system management and monitoring application created in an agile development group as part of my university course. It comprises an API (written in C#), a Windows/Linux monitoring application, and an Android application written in Java."
