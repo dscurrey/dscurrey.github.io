@@ -51,3 +51,7 @@ hero_details:
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Files kept in the repo but not published
+exclude:
+  - DESIGN_NOTES.md

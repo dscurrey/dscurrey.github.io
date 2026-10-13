@@ -82,6 +82,11 @@ p + p { margin-top: 1em; }
 
 /* ---- top bar ---- */
 .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -91,6 +96,14 @@ p + p { margin-top: 1em; }
 }
 .bar nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .bar a { color: inherit; text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em; }
+
+.bar a .num { color: var(--muted); }
+.bar a[aria-current] { color: var(--accent); text-decoration: underline; text-underline-offset: 6px; }
+.bar a[aria-current] .num { color: var(--accent); }
+
+.strip { display: flex; flex-wrap: wrap; gap: 2px 24px; padding: 6px 24px; border-bottom: 1px solid var(--rule); }
+.strip + .row { border-top: 0; }
+.row { scroll-margin-top: 56px; }
 
 button.theme {
     font: inherit;
@@ -154,7 +167,8 @@ button.theme:hover, button.theme:focus-visible { background: var(--accent); bord
     .row { grid-template-columns: 1fr; }
     .row > * { padding: 16px; }
     .row > .label-col { border-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
-    .bar, .foot { padding-left: 16px; padding-right: 16px; }
+    .bar, .foot, .strip { padding-left: 16px; padding-right: 16px; }
+    .row { scroll-margin-top: 90px; }
     .hero-main, .hero-compact .hero-main { grid-template-columns: 1fr; }
     .portrait, .hero-compact .portrait { width: 96px; height: 96px; order: -1; }
     .entry { grid-template-columns: 1fr; }

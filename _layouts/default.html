@@ -29,14 +29,22 @@
 <body id="page-top">
 <div class="sheet">
     <div class="bar">
-        <nav aria-label="Primary">
+        <nav aria-label="Primary" id="primary-nav">
             <a href="#page-top">{{ site.name }}</a>
-            <a href="#experience">Experience</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
+            <a href="#experience" data-section="experience"><span class="num">00</span> Experience</a>
+            <a href="#about" data-section="about"><span class="num">01</span> About</a>
+            <a href="#skills" data-section="skills"><span class="num">02</span> Skills</a>
             {% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}
         </nav>
         <button type="button" class="theme" id="theme-toggle" aria-label="Toggle colour theme">Theme</button>
+    </div>
+
+    <div class="strip label" aria-label="Document information">
+        <span>REV {{ site.time | date: "%Y.%m" }}</span>
+        <span>JEKYLL {{ jekyll.version }}</span>
+        <span>{{ site.data.experience | size }} ENTRIES</span>
+        <span>{{ site.data.skills | size }} SKILLS</span>
+        <span>{{ site.data.about | size }} PARAGRAPHS</span>
     </div>
 
     <header class="row hero hero-{{ site.hero_style | default: 'large' }}">
@@ -62,6 +70,7 @@
 
     <footer class="foot label">
         <span>&copy; {{ site.name }} {{ site.time | date: '%Y' }}</span>
+        <span>Last updated {{ site.time | date: '%Y-%m-%d' }}</span>
         <a href="#page-top">Top &uarr;</a>
     </footer>
 </div>
@@ -83,6 +92,30 @@
         });
         if (mq.addEventListener) mq.addEventListener("change", label);
         label();
+
+        // Highlight the nav link for the section currently in view:
+        // the last section whose top has passed 40% of the viewport height.
+        var links = Array.prototype.slice.call(document.querySelectorAll("#primary-nav a[data-section]"));
+        var ticking = false;
+        function spy() {
+            ticking = false;
+            var current = null;
+            links.forEach(function (a) {
+                var sec = document.getElementById(a.getAttribute("data-section"));
+                if (sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.4) current = a;
+            });
+            if (window.scrollY < 10) current = null;
+            else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = links[links.length - 1];
+            links.forEach(function (a) {
+                if (a === current) a.setAttribute("aria-current", "true");
+                else a.removeAttribute("aria-current");
+            });
+        }
+        window.addEventListener("scroll", function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(spy); }
+        }, { passive: true });
+        window.addEventListener("resize", spy);
+        spy();
     })();
 </script>
 </body>

@@ -1,11 +1,11 @@
 <section class="row" id="about">
-    <h2 class="label-col label"><span class="num">02</span> / About</h2>
+    <h2 class="label-col label"><span class="num">01</span> / About</h2>
     <div class="content">
         {% for para in site.data.about %}{{ para | markdownify }}{% endfor %}
     </div>
 </section>
 <section class="row" id="skills">
-    <h2 class="label-col label"><span class="num">03</span> / Skills</h2>
+    <h2 class="label-col label"><span class="num">02</span> / Skills</h2>
     <ul class="content specs">
         {% for skill in site.data.skills %}<li>{{ skill }}</li>
         {% endfor %}
