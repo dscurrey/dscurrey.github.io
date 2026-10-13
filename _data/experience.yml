@@ -2,24 +2,24 @@
 - when: 2020 – present
   title: razorblue
   details:
-    - Working on supporting, maintaining, and developing a large legacy C++ ERP system since 2020 as part of a small agile team.
-    - Redevelopment of a legacy project using modern architecture (C#, .NET) to make it easier to integrate with other services.
-    - Focus on code maintainability, behaviour-driven and unit testing.
-    - Regular team standups, reporting to the project manager, task estimation.
-    - This role involves heavy use of C#, .NET, and T-SQL, along with some Blazor development and the use of Docker.
+    - Support, maintain and develop a large legacy C++ ERP system as part of a small agile team.
+    - Redeveloping it in C# and .NET so it integrates more easily with other services.
+    - Focus on maintainability, behaviour-driven development and unit testing.
+    - Regular standups, task estimation and reporting to the project manager.
+    - "Day-to-day stack: C#, .NET, T-SQL, Blazor and Docker."
 
 - when: Ongoing
   title: Self-Hosting
   details:
-    - Host my own services for a variety of applications (ironically, not this site, which is hosted on GitHub Pages).
-    - Automated deployment using GitOps and Docker Compose, carried out by Portainer.
-    - Services include Git repositories ([Gitea](https://gitea.dcurrey.co.uk/)), audiobook storage and access (using [Audiobookshelf](https://github.com/advplyr/audiobookshelf)), and image storage ([Immich](https://github.com/immich-app/immich)).
-    - Includes a DevOps environment including Jenkins and SonarQube for code quality, configured against my repositories. This approach helped identify changes to the CI/CD process in the workplace that could boost efficiency.
-    - Log aggregation (comparing Seq and Grafana/Loki) using prototype software, to apply to professional work in due course.
-    - Access to public services is configured with Cloudflare and a reverse proxy, which automatically manage SSL.
-    - Private services are accessed using Headscale, similar to Tailscale (peer-to-peer VPN tunnelling).
+    - Self-hosted services, deployed with GitOps (Docker Compose via Portainer). Not this site, which is on GitHub Pages.
+    - Runs [Gitea](https://gitea.dcurrey.co.uk/) (Git), [Audiobookshelf](https://github.com/advplyr/audiobookshelf) (audiobooks) and [Immich](https://github.com/immich-app/immich) (photos).
+    - Personal DevOps environment running Jenkins and SonarQube against my own repositories. Experimenting here has helped identify CI/CD changes that could boost efficiency at work.
+    - Evaluating log aggregation (Seq vs Grafana/Loki) for professional use.
+    - Public access via Cloudflare and a reverse proxy with automatic SSL.
+    - Private services are reached over a Headscale VPN. Headscale is a self-hosted version of Tailscale, which links devices directly (peer-to-peer) into a private network without exposing them to the internet.
 
 - when: "2019"
   title: Syski (Project)
   details:
-    - "*Winner of ExpoTalent TechART (Technical Artefact) Award (2019).* A system management and monitoring application created in an agile development group as part of my university course. It comprises an API (written in C#), a Windows/Linux monitoring application, and an Android application written in Java."
+    - "*Winner of the ExpoTalent TechART (Technical Artefact) Award, 2019.*"
+    - "University team project: a system management and monitoring suite built by an agile team. It has a C# API, a Windows/Linux monitor and an Android app in Java."

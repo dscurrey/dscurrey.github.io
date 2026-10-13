@@ -10,7 +10,7 @@ Working notes for the site overhaul (not published; excluded in `_config.yml`).
 - **Future**: may switch accent to original green (`#208c71`) with a lighter dark-theme equivalent.
 - **Hero**: compact is the default; large is available via `hero_style: large` in `_config.yml`.
 - **Portrait**: `img/profile.png` is a placeholder logo; replace with a real photo.
-- **Experience wording**: corrections applied. Shorter bullets still to review.
+- **Experience wording**: shortened bullets applied.
 - **Hero**: decide `summary` text, `status` text (both placeholders), and whether to rename Role; `show_email` is off by default.
 
 ## Where things live
