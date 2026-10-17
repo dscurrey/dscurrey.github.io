@@ -1,0 +1,25 @@
+# Entries are shown in order. `details` is a list of paragraphs (Markdown allowed).
+- when: 2020 – present
+  title: razorblue
+  details:
+    - Support, maintain and develop a large legacy C++ ERP system as part of a small agile team.
+    - Redeveloping it in C# and .NET so it integrates more easily with other services.
+    - Focus on maintainability, behaviour-driven development and unit testing.
+    - Regular standups, task estimation and reporting to the project manager.
+    - "Day-to-day stack: C#, .NET, T-SQL, Blazor and Docker."
+
+- when: Ongoing
+  title: Self-Hosting
+  details:
+    - Self-hosted services, deployed with GitOps (Docker Compose via Portainer). Not this site, which is on GitHub Pages.
+    - Runs [Gitea](https://gitea.dcurrey.co.uk/) (Git), [Audiobookshelf](https://github.com/advplyr/audiobookshelf) (audiobooks) and [Immich](https://github.com/immich-app/immich) (photos).
+    - Personal DevOps environment running Jenkins and SonarQube against my own repositories. Experimenting here has helped identify CI/CD changes that could boost efficiency at work.
+    - Evaluating log aggregation (Seq vs Grafana/Loki) for professional use.
+    - Public access via Cloudflare and a reverse proxy with automatic SSL.
+    - Private services are reached over a Headscale VPN. Headscale is a self-hosted version of Tailscale, which links devices directly (peer-to-peer) into a private network without exposing them to the internet.
+
+- when: "2019"
+  title: Syski (Project)
+  details:
+    - "*Winner of the ExpoTalent TechART (Technical Artefact) Award, 2019.*"
+    - "University team project: a system management and monitoring suite built by an agile team. It has a C# API, a Windows/Linux monitor and an Android app in Java."

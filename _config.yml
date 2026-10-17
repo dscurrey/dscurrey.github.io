@@ -2,7 +2,7 @@
 name: Dylan Currey
 email: dscurrey@outlook.com
 canonical_url: https://dscurrey.co.uk
-keywords: "Java, C#, NetBeans, Visual Studio, Agile, Student, Computer Science, developer, programmer"
+keywords: "developer, software developer, C#, .NET, T-SQL, Docker, Linux, self-hosting, Middlesbrough"
 skills: "Developer" #"BSc Computer Science Student (Hons) (First Class) Graduate"
 baseurl:
 
@@ -13,7 +13,7 @@ social:
     url: https://www.linkedin.com/in/dscurrey/
   - title: github
     url: https://github.com/dscurrey
-  - title: github
+  - title: gitea
     url: https://gitea.dcurrey.co.uk/
   # - title: self-hosting-dash
   #   url: https://dash.dcurrey.co.uk/
@@ -26,16 +26,51 @@ google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
 
-# Color settings (hex-codes without the leading hash-tag)
+# Theme settings (hex-codes WITH the leading hash-tag)
+# accent: used for links, hover states and section numbers.
+# Light/dark values are separate so contrast stays readable in both themes.
 color:
-  primary: 208c71
-  primary-rgb: "32, 140, 113"
-  secondary: 005941
-  secondary-dark: 8C203B
-  section-tout: eaf1f1
+  accent: "#c8381a"
+  accent_dark: "#ff7a50"
+  # Future option: original green. Light #208c71 (darken if contrast is low), dark needs a lighter equivalent, e.g. #4cc9a6.
 
+# Hero layout: "compact" (small name + key/value details) or "large" (big name)
+hero_style: compact
 
+# One-line summary shown under the name (leave empty to hide)
+summary: "Software developer. C# / .NET / T-SQL. Legacy modernisation, self-hosting."
+
+# Short status line with an accent dot (leave empty to hide).
+status: "Experimenting with AI"
+
+# Show the email address in the hero (uses `email` above). Hidden by default.
+show_email: false
+
+# Key/value rows shown in the compact hero, in order. Contact, Links and Status
+# rows are added automatically after these when enabled/set.
+hero_details:
+  - label: Role
+    value: Developer
+  - label: Employer
+    value: razorblue
+  - label: Experience
+    since: 2020      # calculated at build time: "N years (since 2020)"; no `value` needed
+  - label: Location
+    value: Middlesbrough, GB
+    flag: gb         # optional: shows a flag before the value (supported: gb)
+  - label: Interests
+    value: LARP, blacksmithing, 3D printing, vintage audio formats
+
+# Page content lives in _data/:
+#   _data/about.yml       About paragraphs
+#   _data/experience.yml  Experience entries
+#   _data/skills.yml      Skills list
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Files kept in the repo but not published
+exclude:
+  - DESIGN_NOTES.md
+  - PREVIEW.md

@@ -1,149 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{%
-        endif %}</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{ site.name }} {{ site.skills }}">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }} &mdash; {{ site.skills }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.name }}, {{ site.skills }}">
     <meta name="keywords" content="{{ site.keywords }}"/>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' |
-            prepend: site.canonical_url }}">
-    <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/icon.png"
-          sizes="16x16"/>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.canonical_url }}">
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/icon.png" sizes="16x16"/>
 
-    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link rel="stylesheet" href="{{ site.baseurl }}{{"
-    /style.css" }}">
+    <!-- Apply saved theme before first paint (otherwise CSS follows the OS preference) -->
+    <script>
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+    </script>
 
-    <!-- Google verification -->
-    {% if site.google_verify %}
-    <meta name="google-site-verification"
-          content="{{ site.google_verify }}">
-    {% endif %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Bing Verification -->
-    {% if site.bing_verify %}
-    <meta name="msvalidate.01" content="{{
-            site.bing_verify }}">
-    {% endif %}
-
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="{{ site.baseurl }}{{"
-    /css/font-awesome/css/font-awesome.min.css"
-    }}">
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700"
-          rel="stylesheet" type="text/css">
-    <link
-            href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-            rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    {% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
+    {% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
 </head>
-<body id="page-top" class="index">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#page-top">{{ site.name }}</a>
-            {% for network in site.social %}
-            <a href="{{ network.url }}" class="btn-social btn-outline"><i
-                    class="fa fa-fw fa-{{ network.title }}"></i></a>
-            {% endfor %}
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse"
-             id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#experience">Experience</a>
-                </li>
-                <li class="page-scroll">
-                    <a href="#about">About Me</a>
-                </li>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+<body id="page-top">
+<div class="sheet">
+    <div class="bar">
+        <nav aria-label="Primary" id="primary-nav">
+            <a href="#page-top">{{ site.name }}</a>
+            <a href="#experience" data-section="experience"><span class="num">00</span> Experience</a>
+            <a href="#about" data-section="about"><span class="num">01</span> About</a>
+            <a href="#skills" data-section="skills"><span class="num">02</span> Skills</a>
+        </nav>
+        <button type="button" class="theme" id="theme-toggle" aria-label="Toggle colour theme">Theme</button>
     </div>
-    <!-- /.container-fluid -->
-</nav>
-<!-- Header -->
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <img class="profile-img" src="img/profile.png" alt="{{
-                            site.name }}">
-                <div class="intro-text">
-                    <span class="name">{{ site.name }}</span>
-                    <hr>
-                    <span class="skills">{{ site.skills }}</span>
-                </div>
+
+    <div class="strip label" aria-label="Document information">
+        <span>REV {{ site.time | date: "%Y.%m" }}</span>
+        <span>JEKYLL {{ jekyll.version }}</span>
+        <span>{{ site.data.experience | size }} ENTRIES</span>
+        <span>{{ site.data.skills | size }} SKILLS</span>
+        <span>{{ site.data.about | size }} PARAGRAPHS</span>
+    </div>
+
+    <header class="row hero hero-{{ site.hero_style | default: 'large' }}">
+        <div class="label-col label">Index</div>
+        <div class="hero-main">
+            <div>
+                <h1>{{ site.name }}</h1>
+                {% if site.summary %}<p class="summary">{{ site.summary }}</p>{% endif %}
+                {% if site.hero_style == 'compact' %}
+                <dl class="details">
+                    {% for d in site.hero_details %}<dt>{{ d.label }}</dt><dd>{% if d.flag == "gb" %}{% include flag_gb.html %}{% endif %}{% if d.since %}{% assign yrs = site.time | date: "%Y" | minus: d.since %}{{ yrs }} year{% if yrs != 1 %}s{% endif %} (since {{ d.since }}){% else %}{{ d.value }}{% endif %}</dd>
+                    {% endfor %}
+                    {% if site.show_email and site.email %}<dt>Contact</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>{% endif %}
+                    {% if site.social.size > 0 %}<dt>Links</dt><dd class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</dd>{% endif %}
+                    {% if site.status %}<dt>Status</dt><dd class="status">{{ site.status }}</dd>{% endif %}
+                </dl>
+                {% else %}
+                <p class="tagline">{{ site.skills }}</p>
+                {% if site.status %}<p class="status">{{ site.status }}</p>{% endif %}
+                {% if site.social.size > 0 %}<p class="links">{% for network in site.social %}<a href="{{ network.url }}" rel="me">{{ network.title }}</a>{% endfor %}</p>{% endif %}
+                {% endif %}
             </div>
+            <img class="portrait" src="{{ site.baseurl }}/img/profile.png" alt="{{ site.name }}" width="160" height="160">
         </div>
-    </div>
-</header>
+    </header>
 
-{% include experience.html %}
-{% include about_me.html %}
+    {% include experience.html %}
+    {% include about_me.html %}
 
-<!-- Footer -->
-<footer class="text-center">
-    <div class="footer-below">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    Copyright &copy; {{ site.name }} 20{{ site.time |
-                    date: '%y' }}
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-<div class="scroll-top page-scroll visible-xs visible-sm">
-    <a class="btn btn-primary" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
+    <footer class="foot label">
+        <span>&copy; {{ site.name }} {{ site.time | date: '%Y' }}</span>
+        <span>Last updated {{ site.time | date: '%Y-%m-%d' }}</span>
+        <a href="#page-top">Top &uarr;</a>
+    </footer>
 </div>
-<!-- jQuery Version 1.11.0 -->
-<script src="{{ site.baseurl }}{{"
-/js/jquery-1.11.0.js" }}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ site.baseurl }}{{"
-/js/bootstrap.min.js" }}"></script>
-<!-- Plugin JavaScript -->
-<script src="{{ site.baseurl }}{{"
-/js/jquery.easing.min.js" }}"></script>
-<script src="{{ site.baseurl }}{{"
-/js/classie.js" }}"></script>
-<script src="{{ site.baseurl }}{{"
-/js/cbpAnimatedHeader.js" }}"></script>
-<!-- Custom Theme JavaScript -->
-<script src="{{ site.baseurl }}{{"
-/js/freelancer.js" }}"></script>
-<noscript><img src="https://muninn.dcurrey.co.uk/ingress/9a574cc2-4050-4383-93b5-b3274ecc4591/pixel.gif"></noscript>
-<script defer src="https://muninn.dcurrey.co.uk/ingress/9a574cc2-4050-4383-93b5-b3274ecc4591/script.js"></script>
+
+<script>
+    (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        function current() {
+            return root.getAttribute("data-theme") || (mq.matches ? "dark" : "light");
+        }
+        function label() { btn.textContent = "Theme: " + current(); }
+        btn.addEventListener("click", function () {
+            var next = current() === "dark" ? "light" : "dark";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("theme", next); } catch (e) {}
+            label();
+        });
+        if (mq.addEventListener) mq.addEventListener("change", label);
+        label();
+
+        // Highlight the nav link for the section currently in view:
+        // the last section whose top has passed 40% of the viewport height.
+        var links = Array.prototype.slice.call(document.querySelectorAll("#primary-nav a[data-section]"));
+        var ticking = false;
+        function spy() {
+            ticking = false;
+            var current = null;
+            links.forEach(function (a) {
+                var sec = document.getElementById(a.getAttribute("data-section"));
+                if (sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.4) current = a;
+            });
+            if (window.scrollY < 10) current = null;
+            else if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = links[links.length - 1];
+            links.forEach(function (a) {
+                if (a === current) a.setAttribute("aria-current", "true");
+                else a.removeAttribute("aria-current");
+            });
+        }
+        window.addEventListener("scroll", function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(spy); }
+        }, { passive: true });
+        window.addEventListener("resize", spy);
+        spy();
+    })();
+</script>
 </body>
 </html>
