@@ -4,8 +4,8 @@ Working notes for the site overhaul (not published; excluded in `_config.yml`).
 
 ## Deferred / to revisit
 - **Hairline detail** (corner ticks / crosshair marks on the sheet, technical-drawing style): left out for now, **revisit later**.
-- **Accent colour**: `#c8381a` (light) / `#ff7a50` (dark) kept for now; needs real-world testing. Alternatives: original green `#208c71`, deep blue.
-- **End of redesign**: set `status` to "Experimenting with AI" (or similar) in `_config.yml`; currently a placeholder ("Rebuilding this site"). Summary is final (spec-sheet style).
+- **Accent colour**: vermilion `#c8381a` (light) / `#ff7a50` (dark) chosen. Alternatives: original green `#208c71`, deep blue.
+- **Status**: set to "Experimenting with AI" (final for the redesign); edit `status` in `_config.yml` to change.
 - **Hero rows**: Discipline dropped. Experience is build-calculated from `since:`.
 - **Future**: may switch accent to original green (`#208c71`) with a lighter dark-theme equivalent.
 - **Hero**: compact is the default; large is available via `hero_style: large` in `_config.yml`.

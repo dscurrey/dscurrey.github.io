@@ -41,8 +41,7 @@ hero_style: compact
 summary: "Software developer. C# / .NET / T-SQL. Legacy modernisation, self-hosting."
 
 # Short status line with an accent dot (leave empty to hide).
-# Placeholder: planned final wording is "Experimenting with AI" (apply at the end of the redesign).
-status: "Rebuilding this site"
+status: "Experimenting with AI"
 
 # Show the email address in the hero (uses `email` above). Hidden by default.
 show_email: false
